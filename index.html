@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="LÉOTOINIX – DJ & Producers spécialisés en électro, techno, hardstyle et phonk. Découvrez notre histoire, nos styles et contactez-nous pour des bookings." />
+  <meta name="description" content="LÉOTOINIX – DJ & Producers spécialisés en électro, techno, hardstyle et phonk." />
   <title>LÉOTOINIX – DJ & Producers</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
@@ -13,10 +13,18 @@
       --cyan: #00ffff;
       --white: #ffffff;
       --dark: #050b18;
-      --dark-trans: rgba(5, 11, 24, 0.7);
+      --dark-trans: rgba(5, 11, 24, 0.85);
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
     html { scroll-behavior: smooth; }
+
     body {
       background: radial-gradient(circle at 30% 20%, #0b1d3a, var(--dark) 70%);
       color: var(--white);
@@ -32,141 +40,230 @@
         radial-gradient(circle at 50% 50%, rgba(30,144,255,0.1), transparent);
       animation: floatGlow 15s infinite alternate ease-in-out;
     }
+
     @keyframes floatGlow {
-      0%   { transform: scale(1) translate(0,0); opacity: 0.7; }
-      50%  { transform: scale(1.1) translate(20px,15px); opacity: 1; }
+      0% { transform: scale(1) translate(0,0); opacity: 0.7; }
+      50% { transform: scale(1.1) translate(20px,15px); opacity: 1; }
       100% { transform: scale(1.05) translate(-15px,-10px); opacity: 0.8; }
     }
 
     /* Navigation */
     .navbar {
       position: fixed; top: 0; left: 0; width: 100%;
-      padding: 25px 60px;
+      padding: 18px 20px;
       display: flex; justify-content: space-between; align-items: center;
       z-index: 1000;
       background: var(--dark-trans); backdrop-filter: blur(15px);
       border-bottom: 1px solid rgba(77,163,255,0.3);
     }
+
     .logo {
-      font-family: 'Orbitron', sans-serif; font-size: 2.8rem; font-weight: 900;
+      font-family: 'Orbitron', sans-serif; 
+      font-size: 2.2rem; 
+      font-weight: 900;
       color: var(--blue-neon);
       text-shadow: 0 0 25px var(--blue-neon), 0 0 50px rgba(77,163,255,0.7);
-      letter-spacing: 5px; text-decoration: none;
-    }
-    .nav-links { display: flex; gap: 25px; }
-    .nav-btn {
-      padding: 12px 28px; border-radius: 50px; border: 2px solid var(--blue-neon);
-      background: transparent; color: var(--white); font-weight: bold; font-size: 1.1rem;
-      text-decoration: none; transition: all 0.4s ease;
-      text-shadow: 0 0 10px rgba(77,163,255,0.6);
-      opacity: 0; transform: translateY(-20px);
-      animation: navFadeIn 0.8s forwards;
-    }
-    .nav-btn:nth-child(1) { animation-delay: 0.2s; }
-    .nav-btn:nth-child(2) { animation-delay: 0.3s; }
-    .nav-btn:nth-child(3) { animation-delay: 0.4s; }
-    .nav-btn:nth-child(4) { animation-delay: 0.5s; }
-    .nav-btn:nth-child(5) { animation-delay: 0.6s; }
-    .nav-btn:nth-child(6) { animation-delay: 0.7s; }
-    @keyframes navFadeIn { to { opacity: 1; transform: translateY(0); } }
-    .nav-btn:hover {
-      background: var(--blue-neon); color: var(--dark);
-      box-shadow: 0 0 40px var(--blue-neon), 0 0 80px rgba(77,163,255,0.6);
-      transform: scale(1.15);
+      letter-spacing: 3px; 
+      text-decoration: none;
     }
 
+    .nav-links {
+      display: flex; 
+      gap: 12px; 
+      flex-wrap: wrap; 
+      justify-content: center;
+    }
+
+    .nav-btn {
+      padding: 10px 18px; 
+      border-radius: 50px; 
+      border: 2px solid var(--blue-neon);
+      background: transparent; 
+      color: var(--white); 
+      font-weight: bold; 
+      font-size: 1rem;
+      text-decoration: none; 
+      transition: all 0.4s ease;
+      white-space: nowrap;
+    }
+
+    .nav-btn:hover {
+      background: var(--blue-neon); 
+      color: var(--dark);
+      box-shadow: 0 0 40px var(--blue-neon);
+      transform: scale(1.1);
+    }
+
+    /* Header */
     header {
       min-height: 100vh;
-      display: flex; flex-direction: column; justify-content: center; align-items: center;
-      text-align: center; padding: 60px 40px;
-      opacity: 0; animation: fadeIn 2.5s forwards;
+      display: flex; 
+      flex-direction: column; 
+      justify-content: center; 
+      align-items: center;
+      text-align: center; 
+      padding: 80px 20px 60px;
     }
-    @keyframes fadeIn { to { opacity: 1; } }
 
     header h1 {
-      font-family: 'Orbitron', sans-serif; font-size: 6rem; font-weight: 900; letter-spacing: 8px;
+      font-family: 'Orbitron', sans-serif; 
+      font-size: 3.8rem; 
+      font-weight: 900; 
+      letter-spacing: 4px;
       text-shadow: 0 0 40px var(--blue-neon), 0 0 80px rgba(77,163,255,0.8);
       animation: pulse 4s infinite alternate, neonFlicker 0.8s infinite alternate;
     }
+
     @keyframes pulse { from { text-shadow: 0 0 30px var(--blue-neon); } to { text-shadow: 0 0 70px var(--blue-neon); } }
     @keyframes neonFlicker { 0%,100% { opacity: 1; } 50% { opacity: 0.85; } }
 
     header p {
-      margin-top: 20px; font-size: 1.8rem;
-      opacity: 0; animation: fadeIn 2s forwards 0.6s;
+      margin-top: 15px; 
+      font-size: 1.4rem;
     }
 
     .equalizer {
-      display: flex; gap: 8px; margin: 50px 0; height: 100px; align-items: flex-end;
-      opacity: 0; animation: fadeIn 2s forwards 1.2s;
+      display: flex; 
+      gap: 6px; 
+      margin: 40px 0; 
+      height: 80px; 
+      align-items: flex-end;
     }
+
     .equalizer span {
-      width: 10px;
+      width: 8px;
       background: linear-gradient(to top, var(--cyan), var(--blue-neon));
-      box-shadow: 0 0 25px var(--cyan), 0 0 50px rgba(77,163,255,0.9);
-      animation: eq 1.2s infinite ease-in-out, colorShift 6s infinite alternate;
+      box-shadow: 0 0 25px var(--cyan);
+      animation: eq 1.2s infinite ease-in-out;
     }
+
     .equalizer span:nth-child(odd) { animation-duration: 0.9s; }
     .equalizer span:nth-child(even) { animation-duration: 1.4s; }
-    @keyframes eq { 0%,100% { height: 15%; } 50% { height: 100%; } }
 
-    /* === BOUTON BOOKING CORRIGÉ === */
+    @keyframes eq { 0%,100% { height: 20%; } 50% { height: 100%; } }
+
     .cta {
-      margin-top: 50px;
-      padding: 18px 50px;
+      margin-top: 40px;
+      padding: 16px 45px;
       border-radius: 60px;
       border: 3px solid var(--blue-neon);
       background: transparent;
       color: var(--white);
       text-decoration: none;
       font-weight: bold;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       box-shadow: 0 0 40px rgba(77,163,255,0.8);
       transition: all 0.4s ease;
     }
+
     .cta:hover {
       background: linear-gradient(135deg, var(--blue-neon), var(--cyan));
       color: var(--dark);
       box-shadow: 0 0 80px var(--blue-neon);
-      transform: scale(1.15);
+      transform: scale(1.12);
     }
 
-    /* Le reste du CSS (sections, cards, etc.) reste identique */
-    section { max-width: 1400px; margin: 120px auto; padding: 0 60px; }
+    /* Sections */
+    section {
+      max-width: 1100px;
+      margin: 100px auto;
+      padding: 0 20px;
+    }
+
     .card {
       background: rgba(255,255,255,0.06);
       backdrop-filter: blur(20px);
-      border-radius: 30px;
-      padding: 60px;
+      border-radius: 25px;
+      padding: 40px 30px;
       box-shadow: 0 0 50px rgba(30,144,255,0.3);
-      margin-bottom: 80px;
+      margin-bottom: 60px;
     }
-    .card:hover { transform: translateY(-15px); box-shadow: 0 0 80px rgba(30,144,255,0.5); }
-    h2 { font-family: 'Orbitron', sans-serif; color: var(--blue-neon); margin-bottom: 35px; font-size: 3.5rem; text-shadow: 0 0 20px rgba(77,163,255,0.7); }
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-    .gallery img { width: 100%; border-radius: 25px; box-shadow: 0 0 50px rgba(77,163,255,0.6); transition: all 0.6s ease; opacity: 1; transform: scale(1); }
-    .gallery img:hover { transform: scale(1.12); box-shadow: 0 0 100px rgba(77,163,255,0.9); }
-    ul { list-style: none; font-size: 1.4rem; }
-    ul li { margin: 20px 0; }
-    ul li::before { content: "▸ "; color: var(--cyan); font-size: 1.6rem; margin-right: 15px; }
-    .badges-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-    .badge {
-      padding: 12px 35px; border-radius: 50px; border: 2px solid var(--blue-neon);
-      background: rgba(77,163,255,0.15); color: var(--white); font-size: 1.3rem; font-weight: bold;
-      text-shadow: 0 0 10px rgba(77,163,255,0.6); transition: all 0.4s ease;
+
+    h2 {
+      font-family: 'Orbitron', sans-serif; 
+      color: var(--blue-neon); 
+      margin-bottom: 25px; 
+      font-size: 2.6rem; 
+      text-shadow: 0 0 20px rgba(77,163,255,0.7);
+      text-align: center;
     }
-    .badge:hover { background: var(--blue-neon); color: var(--dark); transform: scale(1.2); box-shadow: 0 0 40px var(--blue-neon); }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 0 40px rgba(77,163,255,0.6);
+      transition: all 0.5s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 80px rgba(77,163,255,0.9);
+    }
+
+    ul {
+      list-style: none;
+      font-size: 1.25rem;
+    }
+
+    ul li {
+      margin: 18px 0;
+    }
+
+    ul li::before {
+      content: "▸ "; 
+      color: var(--cyan); 
+      font-size: 1.5rem; 
+      margin-right: 12px;
+    }
+
     .contact {
-      text-align: center; padding: 100px 60px; border-radius: 40px;
+      text-align: center;
+      padding: 70px 30px;
+      border-radius: 30px;
       background: linear-gradient(135deg, rgba(30,144,255,0.35), rgba(0,255,255,0.15));
       box-shadow: 0 0 100px rgba(77,163,255,0.6);
+      margin: 80px 20px;
     }
+
     .contact a {
-      color: var(--cyan); font-size: 2rem; font-weight: bold; text-decoration: none;
-      text-shadow: 0 0 30px var(--cyan); transition: all 0.4s;
+      color: var(--cyan); 
+      font-size: 1.8rem; 
+      font-weight: bold; 
+      text-decoration: none;
+      text-shadow: 0 0 30px var(--cyan);
     }
-    .contact a:hover { text-shadow: 0 0 60px var(--cyan); transform: scale(1.1); display: inline-block; }
-    footer { text-align: center; padding: 60px; font-size: 1.1rem; opacity: 0.7; }
+
+    .contact a:hover {
+      text-shadow: 0 0 60px var(--cyan);
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      font-size: 1rem;
+      opacity: 0.75;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      header h1 { font-size: 3.2rem; letter-spacing: 2px; }
+      header p { font-size: 1.25rem; }
+      .logo { font-size: 1.9rem; }
+      .nav-links { gap: 8px; }
+      .nav-btn { padding: 8px 14px; font-size: 0.95rem; }
+    }
+
+    @media (max-width: 480px) {
+      header h1 { font-size: 2.8rem; }
+      .cta { font-size: 1.25rem; padding: 14px 35px; }
+    }
   </style>
 </head>
 <body>
@@ -176,10 +273,7 @@
     <a href="#" class="logo">LÉOTOINIX</a>
     <div class="nav-links">
       <a href="#histoire" class="nav-btn">Histoire</a>
-      <a href="#styles" class="nav-btn">Styles</a>
       <a href="#galerie" class="nav-btn">Galerie</a>
-      <a href="#genres" class="nav-btn">Genres</a>
-      <a href="#pourquoi" class="nav-btn">Pourquoi</a>
       <a href="#contact" class="nav-btn">Contact</a>
     </div>
   </nav>
@@ -187,27 +281,21 @@
   <header>
     <h1>𝐋𝐄́Ø𝐓𝐎𝐈𝐍𝐈𝐗</h1>
     <p>DJ & Producers – électro • Techno • Hardstyle</p>
+    
     <div class="equalizer">
       <span></span><span></span><span></span><span></span><span></span>
       <span></span><span></span><span></span><span></span><span></span>
     </div>
+    
     <a href="#contact" class="cta">Book / Contact</a>
   </header>
 
   <section>
     <div class="card" id="histoire">
       <h2>Notre histoire</h2>
-      <p> LÉOTOINIX est un projet musical né d’une passion commune pour la musique électronique, la hardbass et la scène EDM. À l’origine, tout commence avec Antoinix, rapidement renommé Toinix, qui, avec l’aide de DJosh, crée ses premiers sons hardbass et hardcore sur FL Studio. Cette énergie brute et puissante marque le véritable point de départ du projet. Séduit par cet univers, Lyo Mold se lance également dans la production musicale. Ensemble, ils donnent naissance à la chaîne YouTube Léotoinix, qui cumule rapidement des milliers de vues et pose les bases de leur identité sonore : un style moderne, percutant et électronique. Après la suppression de la chaîne, le projet renaît sous le nom ZTL SQUAD, poursuivant l’aventure musicale avant d’être à nouveau supprimé. Parallèlement, Lyo Mold explore différents formats et styles à travers plusieurs autres chaînes, comme Ravager Rave, qui propose des morceaux de techno et de phonk. Bien que ces chaînes n’aient atteint qu’une dizaine d’abonnés et une centaine de vues, elles témoignent de sa curiosité artistique et de sa volonté de partager ses créations avec le public. Aujourd’hui, nos chemins artistiques évoluent : Lyo Mold développe ses propres productions, publiées sur toutes les plateformes de streaming, maîtrisant aussi bien la création musicale en studio que le mix en conditions réelles. Il est également directeur d’un label indépendant, réunissant plusieurs artistes spécialisés en phonk et en techno. Toinix, de son côté, se concentre sur le mix par passion, ayant animé des anniversaires, soirées privées et événements, développant une véritable capacité d’adaptation à l’énergie du public. L’un d’entre nous a également effectué un stage chez Sonology, renforçant nos compétences techniques et notre compréhension professionnelle du milieu musical. Aujourd’hui, LÉOTOINIX représente l’évolution d’un parcours marqué par la persévérance, la passion et la réinvention constante. De la hardbass sur FL Studio aux plateformes internationales, notre projet continue d’évoluer avec une seule ambition : faire vibrer le public, tout en explorant de nouvelles voies musicales grâce à des projets parallèles comme ceux de Lyo Mold. </p>
+      <p>LÉOTOINIX est un projet musical né d’une passion commune pour la musique électronique, la hardbass et la scène EDM. À l’origine, tout commence avec Antoinix, rapidement renommé Toinix, qui, avec l’aide de DJosh, crée ses premiers sons hardbass et hardcore sur FL Studio. Cette énergie brute et puissante marque le véritable point de départ du projet. Séduit par cet univers, Lyo Mold se lance également dans la production musicale. Ensemble, ils donnent naissance à la chaîne YouTube Léotoinix, qui cumule rapidement des milliers de vues et pose les bases de leur identité sonore : un style moderne, percutant et électronique. Après la suppression de la chaîne, le projet renaît sous le nom ZTL SQUAD, poursuivant l’aventure musicale avant d’être à nouveau supprimé. Parallèlement, Lyo Mold explore différents formats et styles à travers plusieurs autres chaînes, comme Ravager Rave, qui propose des morceaux de techno et de phonk. Bien que ces chaînes n’aient atteint qu’une dizaine d’abonnés et une centaine de vues, elles témoignent de sa curiosité artistique et de sa volonté de partager ses créations avec le public. Aujourd’hui, nos chemins artistiques évoluent : Lyo Mold développe ses propres productions, publiées sur toutes les plateformes de streaming, maîtrisant aussi bien la création musicale en studio que le mix en conditions réelles. Il est également directeur d’un label indépendant, réunissant plusieurs artistes spécialisés en phonk et en techno. Toinix, de son côté, se concentre sur le mix par passion, ayant animé des anniversaires, soirées privées et événements, développant une véritable capacité d’adaptation à l’énergie du public. L’un d’entre nous a également effectué un stage chez Sonology, renforçant nos compétences techniques et notre compréhension professionnelle du milieu musical. Aujourd’hui, LÉOTOINIX représente l’évolution d’un parcours marqué par la persévérance, la passion et la réinvention constante. De la hardbass sur FL Studio aux plateformes internationales, notre projet continue d’évoluer avec une seule ambition : faire vibrer le public, tout en explorant de nouvelles voies musicales grâce à des projets parallèles comme ceux de Lyo Mold.</p>
     </div>
-    <div class="card" id="styles">
-      <h2>Styles & Énergie</h2>
-      <ul>
-        <li>Électro</li>
-        <li>Techno</li>
-        <li>Hardstyle</li>
-        <li>Phonk</li>
-      </ul>
-    </div>
+
     <div class="card" id="galerie">
       <h2>Galerie</h2>
       <div class="gallery">
@@ -217,28 +305,10 @@
         <img src="imaage.png" alt="stylé" loading="lazy">
       </div>
     </div>
-    <div class="card" id="genres">
-      <h2>Genres</h2>
-      <div class="badges-container">
-        <div class="badge">Techno</div>
-        <div class="badge">EDM / Dance</div>
-        <div class="badge">Phonk</div>
-        <div class="badge">Hard Dance (sur demande)</div>
-      </div>
-    </div>
-    <div class="card" id="pourquoi">
-      <h2>Pourquoi nous choisir</h2>
-      <ul>
-        <li>Sets adaptables selon le public et l'ambiance</li>
-        <li>Maîtrise du mix live et de la production</li>
-        <li>Expérience en événements privés et soirées</li>
-        <li>Univers visuel et sonore moderne</li>
-      </ul>
-    </div>
+
     <div id="contact" class="contact">
       <h2>Contact & Booking</h2>
-       <li>N'hesitée pas a aller voir notre compte soundcloud ou nous partagerons nos mix (Léotoinix DJ
-)</li>
+      <p>N'hésite pas à aller voir notre compte SoundCloud où nous partageons nos mix (<strong>Léotoinix DJ</strong>)</p>
       <p><a href="mailto:Leotoinix@proton.me">Leotoinix@proton.me</a></p>
     </div>
   </section>
@@ -246,7 +316,6 @@
   <footer>© 2026 LÉOTOINIX – Electronic Music Project</footer>
 </body>
 </html>
-
 
 
 
