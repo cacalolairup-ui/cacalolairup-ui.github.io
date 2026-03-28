@@ -15,17 +15,14 @@
       --dark: #050b18;
       --dark-trans: rgba(5, 11, 24, 0.9);
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
     html { scroll-behavior: smooth; }
-
     body {
       background: radial-gradient(circle at 30% 20%, #0b1d3a, var(--dark) 70%);
       color: var(--white);
       line-height: 1.7;
       overflow-x: hidden;
     }
-
     .glow-bg {
       position: fixed; inset: 0; z-index: -1;
       background: radial-gradient(circle at 20% 30%, rgba(77,163,255,0.25), transparent 50%),
@@ -33,14 +30,13 @@
                   radial-gradient(circle at 50% 50%, rgba(30,144,255,0.1), transparent);
       animation: floatGlow 15s infinite alternate ease-in-out;
     }
-
     @keyframes floatGlow {
       0% { transform: scale(1) translate(0,0); opacity: 0.7; }
       50% { transform: scale(1.1) translate(20px,15px); opacity: 1; }
       100% { transform: scale(1.05) translate(-15px,-10px); opacity: 0.8; }
     }
 
-    /* Navigation - Bouton RGB */
+    /* Navigation - Bouton RGB (remis comme avant) */
     .navbar {
       position: fixed; top: 0; left: 0; width: 100%;
       padding: 18px 20px;
@@ -49,7 +45,6 @@
       background: var(--dark-trans); backdrop-filter: blur(15px);
       border-bottom: 1px solid rgba(77,163,255,0.3);
     }
-
     .demo-btn {
       padding: 14px 45px;
       border-radius: 50px;
@@ -66,18 +61,15 @@
       animation: rgbShift 3s linear infinite, pulse 2s infinite alternate;
       transition: all 0.4s ease;
     }
-
     .demo-btn:hover {
       transform: scale(1.12);
       box-shadow: 0 0 60px #fff, 0 0 110px #00ffff;
     }
-
     @keyframes rgbShift {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-
     @keyframes pulse { from { box-shadow: 0 0 30px #fff; } to { box-shadow: 0 0 80px #ff00ff; } }
 
     /* Header */
@@ -86,34 +78,28 @@
       display: flex; flex-direction: column; justify-content: center; align-items: center;
       text-align: center; padding: 80px 20px 60px;
     }
-
     header h1 {
-      font-family: 'Orbitron', sans-serif; 
-      font-size: 3.8rem; 
-      font-weight: 900; 
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3.8rem;
+      font-weight: 900;
       letter-spacing: 4px;
       text-shadow: 0 0 40px var(--blue-neon), 0 0 80px rgba(77,163,255,0.8);
     }
-
     header p {
-      margin-top: 15px; 
+      margin-top: 15px;
       font-size: 1.4rem;
     }
-
     .equalizer {
       display: flex; gap: 6px; margin: 40px 0; height: 80px; align-items: flex-end;
     }
-
     .equalizer span {
       width: 8px;
       background: linear-gradient(to top, var(--cyan), var(--blue-neon));
       box-shadow: 0 0 25px var(--cyan);
       animation: eq 1.2s infinite ease-in-out;
     }
-
     .equalizer span:nth-child(odd) { animation-duration: 0.9s; }
     .equalizer span:nth-child(even) { animation-duration: 1.4s; }
-
     @keyframes eq { 0%,100% { height: 20%; } 50% { height: 100%; } }
 
     .cta {
@@ -129,7 +115,6 @@
       box-shadow: 0 0 40px rgba(77,163,255,0.8);
       transition: all 0.4s ease;
     }
-
     .cta:hover {
       background: linear-gradient(135deg, var(--blue-neon), var(--cyan));
       color: var(--dark);
@@ -137,29 +122,56 @@
       transform: scale(1.12);
     }
 
-    /* Sections */
-    section {
-      max-width: 1100px;
-      margin: 100px auto;
+    /* Section Démo SoundCloud */
+    .demo-section {
+      max-width: 900px;
+      margin: 80px auto;
       padding: 0 20px;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.06);
-      backdrop-filter: blur(20px);
-      border-radius: 25px;
-      padding: 40px 30px;
-      box-shadow: 0 0 50px rgba(30,144,255,0.3);
-      margin-bottom: 70px;
-    }
-
-    h2 {
-      font-family: 'Orbitron', sans-serif; 
-      color: var(--blue-neon); 
-      margin-bottom: 25px; 
-      font-size: 2.6rem; 
-      text-shadow: 0 0 20px rgba(77,163,255,0.7);
       text-align: center;
+    }
+    .player-card {
+      background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(20px);
+      border-radius: 30px;
+      padding: 50px 40px;
+      border: 2px solid rgba(0,255,255,0.4);
+      box-shadow: 0 0 60px rgba(0,255,255,0.5);
+    }
+    .player-card h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--cyan);
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-shadow: 0 0 20px var(--cyan);
+    }
+
+    /* Bouton SoundCloud (dans la page) */
+    .soundcloud-btn {
+      padding: 18px 50px;
+      border-radius: 50px;
+      border: 3px solid #fff;
+      background: linear-gradient(90deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+      background-size: 300% 300%;
+      color: #000;
+      font-weight: 900;
+      font-size: 1.45rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      box-shadow: 0 0 30px #fff, 0 0 60px #ff00ff;
+      animation: rgbShift 3s linear infinite, pulse 2s infinite alternate;
+      transition: all 0.4s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .soundcloud-btn:hover {
+      transform: scale(1.12);
+      box-shadow: 0 0 60px #fff, 0 0 110px #00ffff;
+    }
+    .soundcloud-btn::before {
+      content: "🎧";
+      font-size: 1.7rem;
     }
 
     /* Galerie */
@@ -168,48 +180,15 @@
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
     }
-
     .gallery img {
       width: 100%;
       border-radius: 20px;
       box-shadow: 0 0 40px rgba(77,163,255,0.6);
       transition: all 0.5s ease;
     }
-
     .gallery img:hover {
       transform: scale(1.08);
       box-shadow: 0 0 80px rgba(77,163,255,0.9);
-    }
-
-    /* Lecteur Démo */
-    .demo-section {
-      max-width: 900px;
-      margin: 80px auto;
-      padding: 0 20px;
-    }
-
-    .player-card {
-      background: rgba(255,255,255,0.07);
-      backdrop-filter: blur(20px);
-      border-radius: 30px;
-      padding: 40px 30px;
-      border: 2px solid rgba(0,255,255,0.4);
-      box-shadow: 0 0 60px rgba(0,255,255,0.5);
-      text-align: center;
-    }
-
-    .player-card h2 {
-      font-family: 'Orbitron', sans-serif;
-      color: var(--cyan);
-      font-size: 2.4rem;
-      margin-bottom: 20px;
-      text-shadow: 0 0 20px var(--cyan);
-    }
-
-    audio {
-      width: 100%;
-      max-width: 700px;
-      margin: 25px auto;
     }
 
     /* Contact */
@@ -221,15 +200,13 @@
       box-shadow: 0 0 100px rgba(77,163,255,0.6);
       margin: 80px 20px;
     }
-
     .contact a {
-      color: var(--cyan); 
-      font-size: 1.8rem; 
-      font-weight: bold; 
+      color: var(--cyan);
+      font-size: 1.8rem;
+      font-weight: bold;
       text-decoration: none;
       text-shadow: 0 0 30px var(--cyan);
     }
-
     .spotify-link {
       display: inline-block;
       margin-top: 20px;
@@ -243,7 +220,6 @@
       box-shadow: 0 0 30px #1DB954;
       transition: 0.3s;
     }
-
     .spotify-link:hover {
       transform: scale(1.08);
       box-shadow: 0 0 50px #1DB954;
@@ -259,13 +235,14 @@
     @media (max-width: 768px) {
       header h1 { font-size: 3.2rem; }
       .demo-btn { font-size: 1.15rem; padding: 12px 30px; }
+      .soundcloud-btn { font-size: 1.25rem; padding: 15px 40px; }
     }
   </style>
 </head>
 <body>
   <div class="glow-bg"></div>
 
-  <!-- Bouton RGB en haut -->
+  <!-- Navigation - Bouton remis comme avant -->
   <nav class="navbar">
     <a href="#demo" class="demo-btn">▶ ÉCOUTER LA DEMO</a>
   </nav>
@@ -273,18 +250,17 @@
   <header>
     <h1>𝐋𝐄́Ø𝐓𝐎𝐈𝐍𝐈𝐗</h1>
     <p>DJ & Producers – électro • Techno • Hardstyle</p>
-    
+   
     <div class="equalizer">
       <span></span><span></span><span></span><span></span><span></span>
       <span></span><span></span><span></span><span></span><span></span>
     </div>
-    
+   
     <a href="#contact" class="cta">Book / Contact</a>
   </header>
 
   <section>
-
-    <!-- 1. Galerie -->
+    <!-- Galerie -->
     <div class="card">
       <h2>Galerie</h2>
       <div class="gallery">
@@ -292,44 +268,41 @@
       </div>
     </div>
 
-    <!-- 2. Démo -->
+    <!-- Démo SoundCloud -->
     <div id="demo" class="demo-section">
       <div class="player-card">
         <h2>🎧 ÉCOUTE NOTRE MIX DEMO</h2>
-        <p style="margin-bottom: 25px; font-size: 1.2rem;">
-          Voici un extrait de notre set récent (électro / techno / hardstyle). Monte le son !
+        <p style="margin-bottom: 35px; font-size: 1.25rem;">
+          Voici un extrait de notre set récent (électro / techno / hardstyle).<br>
+          Monte le son et profite du mix sur SoundCloud !
         </p>
         
-        <audio controls>
-          <source src="TON_MIX_DEMO.mp3" type="audio/mpeg">
-          Ton navigateur ne supporte pas la lecture audio.
-        </audio>
-        
-        <p style="margin-top: 25px; font-size: 1.05rem; opacity: 0.85;">
-          Remplace <strong>TON_MIX_DEMO.mp3</strong> par le nom de ton fichier (à placer dans le même dossier).
-        </p>
+        <a href="https://soundcloud.com/marine-caca/mix-demo" 
+           target="_blank" 
+           class="soundcloud-btn">
+          ÉCOUTER LA DEMO SUR SOUNDCLOUD
+        </a>
       </div>
     </div>
 
-    <!-- 3. Contact + Spotify -->
+    <!-- Contact + Spotify -->
     <div id="contact" class="contact">
       <h2>Contact & Booking</h2>
       <p>N'hésite pas à aller voir nos mix sur SoundCloud (<strong>Léotoinix DJ</strong>)</p>
       <p><a href="mailto:Leotoinix@proton.me">Leotoinix@proton.me</a></p>
-      
+     
       <p style="margin-top: 40px; font-size: 1.3rem;">Écoute aussi les productions solo de Lyo Mold :</p>
-      <a href="https://open.spotify.com/intl-fr/artist/0SWRSGRxVtLPUcaooKjxnD?si=QGVGW_5bRpKC7_biwePpTw" 
+      <a href="https://open.spotify.com/intl-fr/artist/0SWRSGRxVtLPUcaooKjxnD?si=QGVGW_5bRpKC7_biwePpTw"
          target="_blank" class="spotify-link">
          🎵 ÉCOUTER LYO MOLD SUR SPOTIFY
       </a>
     </div>
 
-    <!-- 4. Histoire -->
+    <!-- Histoire -->
     <div class="card">
       <h2>Notre histoire</h2>
       <p>LÉOTOINIX est un projet musical né d’une passion commune pour la musique électronique, la hardbass et la scène EDM. À l’origine, tout commence avec Antoinix, rapidement renommé Toinix, qui, avec l’aide de DJosh, crée ses premiers sons hardbass et hardcore sur FL Studio. Cette énergie brute et puissante marque le véritable point de départ du projet. Séduit par cet univers, Lyo Mold se lance également dans la production musicale. Ensemble, ils donnent naissance à la chaîne YouTube Léotoinix, qui cumule rapidement des milliers de vues et pose les bases de leur identité sonore : un style moderne, percutant et électronique. Après la suppression de la chaîne, le projet renaît sous le nom ZTL SQUAD, poursuivant l’aventure musicale avant d’être à nouveau supprimé. Parallèlement, Lyo Mold explore différents formats et styles à travers plusieurs autres chaînes, comme Ravager Rave, qui propose des morceaux de techno et de phonk. Bien que ces chaînes n’aient atteint qu’une dizaine d’abonnés et une centaine de vues, elles témoignent de sa curiosité artistique et de sa volonté de partager ses créations avec le public. Aujourd’hui, nos chemins artistiques évoluent : Lyo Mold développe ses propres productions, publiées sur toutes les plateformes de streaming, maîtrisant aussi bien la création musicale en studio que le mix en conditions réelles. Il est également directeur d’un label indépendant, réunissant plusieurs artistes spécialisés en phonk et en techno. Toinix, de son côté, se concentre sur le mix par passion, ayant animé des anniversaires, soirées privées et événements, développant une véritable capacité d’adaptation à l’énergie du public. L’un d’entre nous a également effectué un stage chez Sonology, renforçant nos compétences techniques et notre compréhension professionnelle du milieu musical. Aujourd’hui, LÉOTOINIX représente l’évolution d’un parcours marqué par la persévérance, la passion et la réinvention constante. De la hardbass sur FL Studio aux plateformes internationales, notre projet continue d’évoluer avec une seule ambition : faire vibrer le public, tout en explorant de nouvelles voies musicales grâce à des projets parallèles comme ceux de Lyo Mold.</p>
     </div>
-
   </section>
 
   <footer>© 2026 LÉOTOINIX – Electronic Music Project</footer>
